@@ -15,6 +15,9 @@
 		C03DF88F2370E4A80055AA44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C03DF88D2370E4A80055AA44 /* Main.storyboard */; };
 		C03DF8912370E4AA0055AA44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C03DF8902370E4AA0055AA44 /* Assets.xcassets */; };
 		C03DF8942370E4AA0055AA44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C03DF8922370E4AA0055AA44 /* LaunchScreen.storyboard */; };
+		C0EFE9412372AC79007BD5B4 /* assets.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C0EFE9402372AC79007BD5B4 /* assets.atlas */; };
+		C0EFE9442372ACB5007BD5B4 /* sfx_swipe.caf in Resources */ = {isa = PBXBuildFile; fileRef = C0EFE9432372ACB5007BD5B4 /* sfx_swipe.caf */; };
+		C0EFE9462372ACE4007BD5B4 /* MSButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EFE9452372ACE4007BD5B4 /* MSButtonNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		C03DF8902370E4AA0055AA44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C03DF8932370E4AA0055AA44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C03DF8952370E4AA0055AA44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C0EFE9402372AC79007BD5B4 /* assets.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = assets.atlas; sourceTree = "<group>"; };
+		C0EFE9432372ACB5007BD5B4 /* sfx_swipe.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sfx_swipe.caf; sourceTree = "<group>"; };
+		C0EFE9452372ACE4007BD5B4 /* MSButtonNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSButtonNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,10 +73,21 @@
 				C03DF88B2370E4A80055AA44 /* GameViewController.swift */,
 				C03DF88D2370E4A80055AA44 /* Main.storyboard */,
 				C03DF8902370E4AA0055AA44 /* Assets.xcassets */,
+				C0EFE9452372ACE4007BD5B4 /* MSButtonNode.swift */,
+				C0EFE9422372ACB5007BD5B4 /* SFX */,
+				C0EFE9402372AC79007BD5B4 /* assets.atlas */,
 				C03DF8922370E4AA0055AA44 /* LaunchScreen.storyboard */,
 				C03DF8952370E4AA0055AA44 /* Info.plist */,
 			);
 			path = SushiNeko;
+			sourceTree = "<group>";
+		};
+		C0EFE9422372ACB5007BD5B4 /* SFX */ = {
+			isa = PBXGroup;
+			children = (
+				C0EFE9432372ACB5007BD5B4 /* sfx_swipe.caf */,
+			);
+			path = SFX;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,8 +150,10 @@
 			files = (
 				C03DF88F2370E4A80055AA44 /* Main.storyboard in Resources */,
 				C03DF8862370E4A80055AA44 /* GameScene.sks in Resources */,
+				C0EFE9412372AC79007BD5B4 /* assets.atlas in Resources */,
 				C03DF8912370E4AA0055AA44 /* Assets.xcassets in Resources */,
 				C03DF8942370E4AA0055AA44 /* LaunchScreen.storyboard in Resources */,
+				C0EFE9442372ACB5007BD5B4 /* sfx_swipe.caf in Resources */,
 				C03DF8882370E4A80055AA44 /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -149,6 +168,7 @@
 				C03DF88A2370E4A80055AA44 /* GameScene.swift in Sources */,
 				C03DF88C2370E4A80055AA44 /* GameViewController.swift in Sources */,
 				C03DF8842370E4A80055AA44 /* AppDelegate.swift in Sources */,
+				C0EFE9462372ACE4007BD5B4 /* MSButtonNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
