@@ -17,6 +17,8 @@
 		C03DF8942370E4AA0055AA44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C03DF8922370E4AA0055AA44 /* LaunchScreen.storyboard */; };
 		C0D18418237640FE002ED8DF /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D18417237640FE002ED8DF /* Character.swift */; };
 		C0E964EC237616B10088AF5E /* SushiPiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E964EB237616B10088AF5E /* SushiPiece.swift */; };
+		C0E9DAD72379514C00FA9329 /* sfx_swipe in Resources */ = {isa = PBXBuildFile; fileRef = C0E9DAD62379514C00FA9329 /* sfx_swipe */; };
+		C0EA7B00237A0F96003FEFC9 /* AnimationActions.sks in Resources */ = {isa = PBXBuildFile; fileRef = C0EA7AFF237A0F96003FEFC9 /* AnimationActions.sks */; };
 		C0EFE9412372AC79007BD5B4 /* assets.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C0EFE9402372AC79007BD5B4 /* assets.atlas */; };
 		C0EFE9442372ACB5007BD5B4 /* sfx_swipe.caf in Resources */ = {isa = PBXBuildFile; fileRef = C0EFE9432372ACB5007BD5B4 /* sfx_swipe.caf */; };
 		C0EFE9462372ACE4007BD5B4 /* MSButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EFE9452372ACE4007BD5B4 /* MSButtonNode.swift */; };
@@ -35,6 +37,8 @@
 		C03DF8952370E4AA0055AA44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C0D18417237640FE002ED8DF /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		C0E964EB237616B10088AF5E /* SushiPiece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SushiPiece.swift; sourceTree = "<group>"; };
+		C0E9DAD62379514C00FA9329 /* sfx_swipe */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = sfx_swipe; sourceTree = "<group>"; };
+		C0EA7AFF237A0F96003FEFC9 /* AnimationActions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = AnimationActions.sks; sourceTree = "<group>"; };
 		C0EFE9402372AC79007BD5B4 /* assets.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = assets.atlas; sourceTree = "<group>"; };
 		C0EFE9432372ACB5007BD5B4 /* sfx_swipe.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sfx_swipe.caf; sourceTree = "<group>"; };
 		C0EFE9452372ACE4007BD5B4 /* MSButtonNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSButtonNode.swift; sourceTree = "<group>"; };
@@ -54,6 +58,8 @@
 		C03DF8772370E4A80055AA44 = {
 			isa = PBXGroup;
 			children = (
+				C0EA7AFF237A0F96003FEFC9 /* AnimationActions.sks */,
+				C0E9DAD62379514C00FA9329 /* sfx_swipe */,
 				C03DF8822370E4A80055AA44 /* SushiNeko */,
 				C03DF8812370E4A80055AA44 /* Products */,
 			);
@@ -157,7 +163,9 @@
 				C03DF88F2370E4A80055AA44 /* Main.storyboard in Resources */,
 				C03DF8862370E4A80055AA44 /* GameScene.sks in Resources */,
 				C0EFE9412372AC79007BD5B4 /* assets.atlas in Resources */,
+				C0EA7B00237A0F96003FEFC9 /* AnimationActions.sks in Resources */,
 				C03DF8912370E4AA0055AA44 /* Assets.xcassets in Resources */,
+				C0E9DAD72379514C00FA9329 /* sfx_swipe in Resources */,
 				C03DF8942370E4AA0055AA44 /* LaunchScreen.storyboard in Resources */,
 				C0EFE9442372ACB5007BD5B4 /* sfx_swipe.caf in Resources */,
 				C03DF8882370E4A80055AA44 /* Actions.sks in Resources */,

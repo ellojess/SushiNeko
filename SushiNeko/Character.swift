@@ -9,6 +9,8 @@
 import SpriteKit
 
 class Character: SKSpriteNode {
+    
+    let punch = SKAction(named: "Punch")!
 
     /* Character side */
     var side: Side = .left {
@@ -21,6 +23,7 @@ class Character: SKSpriteNode {
                 xScale = -1
                 position.x = 252
             }
+            /* Run the punch action */ run(punch)
         }
     }
 
