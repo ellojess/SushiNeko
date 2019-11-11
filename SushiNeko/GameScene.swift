@@ -113,6 +113,24 @@ class GameScene: SKScene {
         } else {
             character.side = .left
         }
+        /* Grab sushi piece on top of the base sushi piece, it will always be 'first' */
+        if let firstPiece = sushiTower.first as SushiPiece? {
+            /* Remove from sushi tower array */
+            sushiTower.removeFirst()
+            firstPiece.removeFromParent()
+            /* Add a new sushi piece to the top of the sushi tower */
+            addRandomPieces(total: 1)
+        }
+    }
+    
+    func moveTowerDown() {
+        var n: CGFloat = 0; for piece in sushiTower {
+            let y = (n * 55) + 215; piece.position.y -= (piece.position.y - y) * 0.5; n += 1
+        }
+    }
+    
+    override func update(_ currentTime: TimeInterval) {
+        moveTowerDown()
     }
     
 }
