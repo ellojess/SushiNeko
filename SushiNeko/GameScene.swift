@@ -142,6 +142,14 @@ class GameScene: SKScene {
         }
         /* Grab sushi piece on top of the base sushi piece, it will always be 'first' */
         if let firstPiece = sushiTower.first as SushiPiece? {
+            /* Check character side against sushi piece side (this is our death collision check)*/
+            if character.side == firstPiece.side {
+
+                gameOver()
+
+                /* No need to continue as player is dead */
+                return
+            }
             /* Remove from sushi tower array */
             sushiTower.removeFirst()
             /* Animate the punched sushi piece */
@@ -159,6 +167,42 @@ class GameScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         moveTowerDown()
+    }
+    
+    func gameOver() {
+        /* Game over! */
+
+        state = .gameOver
+
+        /* Create turnRed SKAction */
+        let turnRed = SKAction.colorize(with: .red, colorBlendFactor: 1.0, duration: 0.50)
+
+        /* Turn all the sushi pieces red*/
+        sushiBasePiece.run(turnRed)
+        for sushiPiece in sushiTower {
+            sushiPiece.run(turnRed)
+        }
+
+        /* Make the player turn red */
+        character.run(turnRed)
+
+        /* Change play button selection handler */
+        playButton.selectedHandler = {
+
+            /* Grab reference to the SpriteKit view */
+            let skView = self.view as SKView?
+
+            /* Load Game scene */
+            guard let scene = GameScene(fileNamed: "GameScene") as GameScene? else {
+                return
+            }
+
+            /* Ensure correct aspect mode */
+            scene.scaleMode = .aspectFill
+
+            /* Restart GameScene */
+            skView?.presentScene(scene)
+        }
     }
     
 }
