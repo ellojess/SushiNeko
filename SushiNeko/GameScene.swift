@@ -8,18 +8,27 @@
 
 import SpriteKit
 
+/* Tracking enum for game state */
+enum GameState {
+    case title, ready, playing, gameOver
+}
+
 /* Tracking enum for use with character and sushi side */
 enum Side {
     case left, right, none
 }
 
 class GameScene: SKScene {
+    /* Game management */
+    var state: GameState = .title
     /* Game objects */
     var sushiBasePiece: SushiPiece!
     /* Cat Character */
     var character: Character!
     /* Sushi tower array */
     var sushiTower: [SushiPiece] = []
+    /* Play Button */
+    var playButton: MSButtonNode!
     
     override func didMove(to view: SKView) {
         super.didMove(to: view)
@@ -40,6 +49,17 @@ class GameScene: SKScene {
         
     /* Randomize tower to just outside of the screen */
     addRandomPieces(total: 10)
+        
+    /* UI game objects */
+    playButton = childNode(withName: "playButton") as! MSButtonNode
+        
+    /* Setup play button selection handler */
+    playButton.selectedHandler = {
+        /* Start game */
+        self.state = .ready
+    }
+        
+        
     }
     
     func addTowerPiece(side: Side) {
@@ -102,11 +122,18 @@ class GameScene: SKScene {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        /* Game not ready to play */
+        if state == .gameOver || state == .title { return }
+        /* Game begins on first touch */
+        if state == .ready { state = .playing }
+        
         /* Called when a touch begins */
         /* We only need a single touch here */
         let touch = touches.first!
         /* Get touch position in scene */
         let location = touch.location(in: self)
+        
         /* Was touch on left/right hand side of screen? */
         if location.x > size.width / 2 {
             character.side = .right
