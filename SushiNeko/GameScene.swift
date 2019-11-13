@@ -29,9 +29,22 @@ class GameScene: SKScene {
     var sushiTower: [SushiPiece] = []
     /* Play Button */
     var playButton: MSButtonNode!
+    /* Health Bar */
+    var healthBar: SKSpriteNode!
+    /* Reflect changes to health bar */
+    var health: CGFloat = 1.0 {
+      didSet {
+        /* Cap Health */
+        if health > 1.0 { health = 1.0 }
+        /* Scale health bar between 0.0 -> 1.0 e.g 0 -> 100% */
+        healthBar.xScale = health
+      }
+    }
     
     override func didMove(to view: SKView) {
         super.didMove(to: view)
+        
+    healthBar = childNode(withName: "healthBar") as! SKSpriteNode
         
     /* Connect game objects */
     sushiBasePiece = childNode(withName: "sushiBasePiece") as! SushiPiece
@@ -143,6 +156,9 @@ class GameScene: SKScene {
         /* Grab sushi piece on top of the base sushi piece, it will always be 'first' */
         if let firstPiece = sushiTower.first as SushiPiece? {
             /* Check character side against sushi piece side (this is our death collision check)*/
+            /* Increment Health */
+            health += 0.1
+            
             if character.side == firstPiece.side {
 
                 gameOver()
@@ -167,6 +183,17 @@ class GameScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         moveTowerDown()
+        
+        /* Called before each frame is rendered */
+        if state != .playing { return }
+
+        /* Decrease Health */
+        health -= 0.01
+        /* Has the player ran out of health? */
+        if health < 0 {
+            gameOver()
+        }
+        
     }
     
     func gameOver() {
