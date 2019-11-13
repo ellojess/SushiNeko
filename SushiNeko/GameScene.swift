@@ -40,11 +40,20 @@ class GameScene: SKScene {
         healthBar.xScale = health
       }
     }
+    /* Score Label */
+    var scoreLabel: SKLabelNode!
+    var score: Int = 0 {
+      didSet {
+        scoreLabel.text = String(score)
+      }
+    }
     
     override func didMove(to view: SKView) {
         super.didMove(to: view)
         
     healthBar = childNode(withName: "healthBar") as! SKSpriteNode
+        
+    scoreLabel = childNode(withName: "scoreLabel") as! SKLabelNode
         
     /* Connect game objects */
     sushiBasePiece = childNode(withName: "sushiBasePiece") as! SushiPiece
@@ -158,6 +167,8 @@ class GameScene: SKScene {
             /* Check character side against sushi piece side (this is our death collision check)*/
             /* Increment Health */
             health += 0.1
+            /* Increment Score */
+            score += 1
             
             if character.side == firstPiece.side {
 
