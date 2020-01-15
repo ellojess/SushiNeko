@@ -1,6 +1,9 @@
 # Sushi Neko 
 Sushi Neko - a remake of the popular mobile game Timberman. Used Apple's Swift programming language together with SpriteKit, their game development framework.
 
+ ### Preview
+<img src="https://raw.githubusercontent.com/MakeSchool-Tutorials/Sushi-Neko-SpriteKit-Swift4/master/Tutorial-Images/animated_gameplay.gif">
+
 ## Installation 
  **NOTE:** This app has not launched to the app store. In order to preview this app, you will need to clone this repository and open it in Xcode
  - If you do not have Xcode you can download it [here](https://developer.apple.com/xcode/)
